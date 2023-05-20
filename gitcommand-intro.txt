@@ -1,0 +1,88 @@
+第 1 个命令：git status
+git status命令，查看仓库的状态：
+第 2 个命令：git init
+git init命令，初始化 Git 仓库：
+第 3 个命令：git add
+git add hit.txt命令，将hit.txt文件添加到 Git 仓库：
+第 4 个命令：git commit
+git commit -m "text commit"命令，将hit.txt文件提交到 Git 仓库：
+第 5 个命令：git log
+git log"命令，打印 Git 仓库提交日志：
+通过以上的操作，我们会发现一个现象，那就是：在每个git操作之后，我们基本都会输入git status命令，
+查看仓库状态。这也从侧面说明了git status命令使用的频率之高，
+也建议大家在操作 Git 仓库的时候多使用git status命令，这能帮助我们实时了解仓库的状态，显然非常有用。
+
+第 6 个命令：git branch
+git branch命令，查看 Git 仓库的分支情况：
+输入命令git branch a，再输入命令git branch，我们创建了一个名为a的分支，并且当前的位置仍然为主分支。：
+
+第 7 个命令：git checkout
+git checkout a命令，切换到a分支：
+我们也可以在创建分支的同时，直接切换到新分支，命令为git checkout -b，
+例如输入git checkout -b b命令：
+
+第 8 个命令：git merge
+git merge a命令，将a分支合并到master分支：
+
+第 9 个命令：git branch -d & git branch -D
+输入git branch -d a命令，删除a分支：
+
+第 10 个命令：git tag
+输入git tag v1.0命令，为当前分支添加标签：
+我们为当前所在的a分支添加了一个v1.0标签。通过命令git tag即可查看标签记录：
+通过命令git checkout v1.0即可切换到该标签下的代码。
+
+生成 SSH key输入ssh-keygen -t rsa命令，表示我们指定 RSA 算法生成密钥，然后敲三次回车键，
+期间不需要输入密码，之后就就会生成两个文件，分别为id_rsa和id_rsa.pub，
+即密钥id_rsa和公钥id_rsa.pub. 对于这两个文件，其都为隐藏文件，默认生成在以下目录：
+Linux 系统：~/.ssh
+Mac 系统：~/.ssh
+Windows 系统：C:\Documents and Settings\username\\.ssh
+Windows 10 ThinkPad：C:\Users\think\.ssh密钥和公钥生成之后，
+我们要做的事情就是把公钥id_rsa.pub的内容添加到 GitHub，
+这样我们本地的密钥id_rsa和 GitHub 上的公钥id_rsa.pub才可以进行匹配，授权成功后，
+就可以向 GitHub 提交代码啦！
+
+
+经常用到的两个命令，分别为 push 和 pull 。
+push：该单词直译过来就是“推”的意思，
+如果我们本地的代码有了更新，为了保持本地与远程的代码同步，我们就需要把本地的代码推到远程的仓库，
+代码示例：git push origin master
+
+pull：该单词直译过来就是“拉”的意思，
+如果我们远程仓库的代码有了更新，同样为了保持本地与远程的代码同步，
+我们就需要把远程的代码拉到本地，
+代码示例：git pull origin master
+
+
+git clone https://github.com/guobinhit/mybatis-tutorial.git 
+
+输入git status命令查看仓库状态：
+
+需要先进行git add操作：
+git add src/
+
+git commit -m "commit src file"
+
+git status
+
+将本地仓库的内容push到远程仓库，输入git push origin master命令：
+
+
+git remote add origin https://github.com/guobinhit/springmvc-tutorial.git
+关联远程仓库（在此，默认大家都知道如何获取远程仓库的地址），其中origin为远程仓库的名字：
+
+输入git pull origin master命令，同步远程仓库和本地仓库：
+
+输入git add和git commit命令，将文件test.txt添加并提交到springmvc-tutorial仓库：
+再输入git push origin master命令，将本地仓库修改（或者添加）的内容提交到远程仓库：
+
+在这个例子中，我们将远程仓库命名为origin，本地仓库名为springmvc-tutorial，
+其实两者的名字咱们可以随意取，一般来说，我们习惯性将远程仓库命名为origin，
+不过在需要关联多个远程仓库的时候，就需要我们再取别的名字啦！
+
+最后，再强调一遍：在我们向远程仓库提交代码的时候，一定要先进行pull操作，再进行push操作，
+防止本地仓库与远程仓库不同步导致冲突的问题，尤其是第二种提交代码的情况，很容易就出现问题。
+
+
+
